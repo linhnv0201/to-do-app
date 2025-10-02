@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1 id="title"> TODO APP </h1>
+
+        <div class="add-new-task">
+            <!-- <h2>Add new task</h2> -->
+            <input id="taskInput" type="text" placeholder="Nhập task mới...">
+            <button id="addBtn">Thêm</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="task-overview">
+            <p id="taskCount"> You have 0 pending task.</p>
+            <button id="clearAllBtn">Clear all</button>
+        </div>
+        <!-- <a id="myLink" href="https://chat.openai.com/">Any question?</a> -->
+
+    </div>
+
+    <!-- file JavaScript sẽ được tải song song với HTML nhưng chỉ chạy sau khi toàn bộ HTML được phân tích xong. -->
+    <script src="main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #c6d6cd;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Box chính bao toàn bộ app */
+.todo-container {
+    background: #fff;
+    /* màu trắng */
+    padding: 30px;
+    border-radius: 20px;
+    /* bo góc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* bóng đổ*/
+    width: 350px;
+    text-align: center;
+}
+
+.todo-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9eedc0;
+}
+
+/* --- Phần thêm task --- */
+.add-new-task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* khoảng cách giữa input và button */
+    margin-bottom: 20px;
+    width: 300px;
+    /* cùng độ rộng với task-overview */
+}
+
+.add-new-task input[type="text"] {
+    flex: 1;
+    /* input chiếm hết phần còn lại */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-new-task button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    /* không cho xuống dòng */
+}
+
+.add-new-task button:hover {
+    background-color: #2980b9;
+}
+
+/* --- Danh sách task --- */
+#taskList {
+    list-style-type: none;
+    margin-top: 20px;
+    width: 300px;
+    padding: 0;
+    max-height: 300px;   /* danh sách tối đa cao 300px */
+    overflow-y: auto;    /* scroll dọc khi nhiều task */
+}
+
+#taskList li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start; /* căn trái theo chiều ngang */
+    align-items: center; /* căn giữa theo chiều dọc */
+    border: 1px solid #ddd;
+
+}
+
+/* nội dung task */
+#taskList li span {
+    flex: 1;
+    /* chiếm hết khoảng trống */
+    white-space: nowrap;
+    /* luôn 1 dòng */
+    overflow-x: auto;
+    /* cho phép vuốt ngang */
+    -ms-overflow-style: none;
+    /* ẩn scrollbar trên IE/Edge */
+    scrollbar-width: none;
+    /* ẩn scrollbar trên Firefox */
+    margin-right: 10px;
+    text-align: left;
+    /* chữ căn trái */
+}
+
+/* ẩn scrollbar trên Chrome, Safari */
+#taskList li span::-webkit-scrollbar {
+    display: none;
+}
+
+/* trạng thái completed */
+#taskList li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+/* --- Text + Clear All --- */
+.task-overview {
+    display: flex;
+    justify-content: space-between;
+    /* text trái, button phải */
+    align-items: center;
+    width: 300px;
+    /* cùng độ rộng với danh sách task */
+    margin-top: 20px;
+}
+
+#taskCount {
+    font-size: 14px;
+}
+
+#clearAllBtn {
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#clearAllBtn:hover {
+    background-color: #c0392b;
+}
+
+/* --- Nút xóa từng task --- */
+.delete-btn {
+    margin-left: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #d9534f;
+    /* đỏ nhạt */
+    font-size: 16px;
+    transition: color 0.2s ease;
+    display: none;
+    /* Ẩn mặc định */
+    flex-shrink: 0;
+    /* không bị co lại */
+
+}
+
+/* Khi hover vào li trong taskList thì hiện nút */
+#taskList li:hover .delete-btn {
+    display: inline-block;
+}
+
+.delete-btn:hover {
+    color: #ff0000;
+    /* đỏ đậm khi hover nút */
+}
