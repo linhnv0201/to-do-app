@@ -124,12 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Hiển thị kết quả
-        if (count === 0) {
-            searchResult.textContent = "Không tìm thấy task nào.";
-        } else {
-            searchResult.textContent = `Tìm thấy ${count} task.`;
-        }
+        // if (count === 0) {
+        //     searchResult.textContent = "Not found.";
+        // } else {
+        //     searchResult.textContent = `Found ${count} task.`;
+        // }
     }
 
     findBtn.addEventListener("click", searchTask);
