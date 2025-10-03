@@ -41,25 +41,24 @@ body {
 }
 
 /* --- Phần thêm task --- */
-.add-new-task {
+.add-new-task, .find-task {
     display: flex;
     align-items: center;
-    gap: 10px;
-    /* khoảng cách giữa input và button */
+    gap: 10px; /* khoảng cách giữa input và button */
     margin-bottom: 20px;
-    width: 300px;
-    /* cùng độ rộng với task-overview */
+    width: 300px; /* cùng độ rộng với task-overview */
 }
 
-.add-new-task input[type="text"] {
-    flex: 1;
-    /* input chiếm hết phần còn lại */
+.add-new-task input[type="text"],
+.find-task input[type="text"] {
+    flex: 1; /* input chiếm hết phần còn lại */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.add-new-task button {
+.add-new-task button,
+.find-task button {
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -71,7 +70,8 @@ body {
     /* không cho xuống dòng */
 }
 
-.add-new-task button:hover {
+.add-new-task button:hover,
+.find-task button:hover {
     background-color: #2980b9;
 }
 
@@ -94,7 +94,14 @@ body {
     justify-content: flex-start; /* căn trái theo chiều ngang */
     align-items: center; /* căn giữa theo chiều dọc */
     border: 1px solid #ddd;
+}
 
+.dragging {
+    opacity: 0.5;
+}
+
+#taskList li.over {
+    border: 2px dashed #000;
 }
 
 /* nội dung task */
